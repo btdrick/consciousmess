@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= form.label "Your name or alias (required)" %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :website %>
+    <%= form.label "A website, yours or otherwise (optional)" %>
     <%= form.text_field :website %>
   </div>
 
   <div class="field">
-    <%= form.label :message %>
+    <%= form.label "Your message/note/quote/rant (required)" %>
     <%= form.text_area :message %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Ripple" %>
   </div>
 <% end %>

@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ripples</h1>
-<br>
 <%= link_to 'New Ripple', new_ripple_path %>
 
 <table>
@@ -28,3 +26,10 @@
     <% end %>
   </tbody>
 </table>
+
+<nav>
+ <a href="/ripples">Newest</a> |
+ <a href="/ripples">Previous 10 Ripples</a> |
+ <a href="/ripples">Next 10 Ripples</a> |
+ <a href="/ripples">Oldest</a>
+</nav>
