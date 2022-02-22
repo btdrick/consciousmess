@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ripples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Website</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ripples.each do |ripple| %>
+      <tr>
+        <td><%= ripple.author %></td>
+        <td><%= ripple.website %></td>
+        <td><%= ripple.message %></td>
+        <td><%= link_to 'Show', ripple %></td>
+        <td><%= link_to 'Edit', edit_ripple_path(ripple) %></td>
+        <td><%= link_to 'Destroy', ripple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ripple', new_ripple_path %>

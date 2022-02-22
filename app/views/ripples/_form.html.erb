@@ -1,0 +1,32 @@
+<%= form_with(model: ripple) do |form| %>
+  <% if ripple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ripple.errors.count, "error") %> prohibited this ripple from being saved:</h2>
+
+      <ul>
+        <% ripple.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
