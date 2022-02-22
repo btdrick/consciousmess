@@ -1,19 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @ripple.author %>
-</p>
+<h3>
+  <%= @ripple.author %>  said:
+</h3>
 
-<p>
-  <strong>Website:</strong>
-  <%= @ripple.website %>
-</p>
-
-<p>
-  <strong>Message:</strong>
+<h2>
   <%= @ripple.message %>
-</p>
+</h2>
 
-<%= link_to 'Edit', edit_ripple_path(@ripple) %> |
 <%= link_to 'Back', ripples_path %>
