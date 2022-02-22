@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @ripples.each do |ripple| %>
+    <% @ripples.order(created_at: :desc).each do |ripple| %>
       <tr>
         <td><%= websitelink(ripple) %></td>
         <td><%= ripple.message %></td>
