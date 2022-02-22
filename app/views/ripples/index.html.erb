@@ -15,8 +15,7 @@
   <tbody>
     <% @ripples.each do |ripple| %>
       <tr>
-        <td><%= link_to_if(haswebsite(ripple), ripple.author, { action: "index" }) do
-         link_to(ripple.author, ripple.website) end %></td>
+        <td><%= websitelink(ripple) %></td>
         <td><%= ripple.message %></td>
         <td><%= ripple.created_at %></td>
         <td><%= link_to 'Show', ripple %></td>
