@@ -25,8 +25,8 @@ class RipplesController < ApplicationController
 
     respond_to do |format|
       if @ripple.save
-        format.html { redirect_to ripple_url(@ripple), notice: "Ripple was successfully created." }
-        format.json { render :show, status: :created, location: @ripple }
+        format.html { redirect_to ripples_url, notice: "Ripple was successfully created." }
+        format.json { render :index, status: :created, location: @ripple }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @ripple.errors, status: :unprocessable_entity }
