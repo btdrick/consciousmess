@@ -1,6 +1,7 @@
 class RipplesController < ApplicationController
   before_action :set_ripple, only: %i[ show edit update destroy ]
 
+
   # GET /ripples or /ripples.json
   def index
     @ripples = Ripple.all
