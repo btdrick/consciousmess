@@ -2,8 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-tbody {
-  tr:nth-of-type(odd) {
-  background-color:#DCD0FF;
+#container {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+
+  nav {
+    text-align: center;
+  }
+
+  table {
+    margin: 1em auto;
+    width: 100%;
+    tbody {
+      tr:nth-of-type(odd) {
+      background-color:#DCD0FF;
+      }
+    }
   }
 }

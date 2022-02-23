@@ -1,35 +1,36 @@
 <p id="notice"><%= notice %></p>
+<div id="container">
 
-<%= link_to '<button type="button">New Ripple</button>'.html_safe, new_ripple_path %>
+  <nav>
+   <a href="/ripples">Newest</a> |
+   <a href="/ripples">Previous 10 Ripples</a> |
+   <a href="/ripples">Next 10 Ripples</a> |
+   <a href="/ripples">Oldest</a> |
+   <a href="/ripples/new">New Ripple</a>
+  </nav>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Message</th>
-      <th>Posted</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ripples.order(created_at: :desc).each do |ripple| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= websitelink(ripple) %></td>
-        <td><%= ripple.message %></td>
-        <td><%= ripple.created_at %></td>
-        <td><%= link_to 'Show', ripple %></td>
-        <td><%= link_to 'Edit', edit_ripple_path(ripple) %></td>
-        <td><%= link_to 'Destroy', ripple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Author</th>
+        <th>Message</th>
+        <th>Posted</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<nav>
- <a href="/ripples">Newest</a> |
- <a href="/ripples">Previous 10 Ripples</a> |
- <a href="/ripples">Next 10 Ripples</a> |
- <a href="/ripples">Oldest</a> |
- <a href="/ripples/new">New Ripple</a>
-</nav>
+    <tbody>
+      <% @ripples.order(created_at: :desc).each do |ripple| %>
+        <tr>
+          <td><%= websitelink(ripple) %></td>
+          <td><%= ripple.message %></td>
+          <td><%= ripple.created_at %></td>
+          <td><%= link_to 'Show', ripple %></td>
+          <td><%= link_to 'Edit', edit_ripple_path(ripple) %></td>
+          <td><%= link_to 'Destroy', ripple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
