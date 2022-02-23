@@ -18,6 +18,12 @@ body {
 }
 #banner {
   width: 100%;
-  padding: 3em 2em;
+  margin-bottom: 1.5em;
+  padding: 2em 2em;
   background-color:#DCD0FF;
+}
+#container {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
 }

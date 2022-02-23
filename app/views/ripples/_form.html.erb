@@ -11,19 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Your name or alias (required)" %>
-    <%= form.text_field :author %>
+  <div class="form-outline mb-4">
+    <%= form.label "Your name or alias (required)",
+      class: "form-label" %>
+    <%= form.text_field :author, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label "A website, yours or otherwise (optional)" %>
-    <%= form.text_field :website %>
+  <div class="form-outline mb-4">
+    <%= form.label "A website, yours or otherwise (optional)",
+      class: "form-label" %>
+    <%= form.text_field :website, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label "Your message/note/quote/rant (required)" %>
-    <%= form.text_area :message %>
+  <div class="form-outline mb-4">
+    <%= form.label "Your message/note/quote/rant (required)",
+      class: "form-label" %>
+    <%= form.text_area :message, class: "form-control", rows: "4" %>
   </div>
 
   <div class="actions">

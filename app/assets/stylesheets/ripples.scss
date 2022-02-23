@@ -1,23 +1,19 @@
 // Place all the styles related to the Ripples controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+nav {
+  margin-bottom: 1.5em;
+}
 
-#container {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+.navbar .navbar-nav .nav-item .nav-link {
+  padding: 0 0.5em;
+}
+.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+  border-right: 2px solid #000000;
+}
 
-  nav {
-    text-align: center;
-  }
-
-  table {
-    margin: 1em auto;
-    width: 100%;
-    tbody {
-      tr:nth-of-type(odd) {
-      background-color:#DCD0FF;
-      }
-    }
+.table-striped {
+  tr:nth-child(even){
+    background-color: #F2E8FF;
   }
 }
