@@ -2,18 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 nav {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
+  border-radius: 15px;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
   padding: 0 0.5em;
+  color: white;
 }
 .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
-  border-right: 2px solid #000000;
+  border-right: 2px solid white;
 }
 
-.table-striped {
-  tr:nth-child(even){
+.table {
+  tbody {
+    tr:nth-child(odd){
     background-color: #F2E8FF;
+    }
   }
 }
