@@ -6,6 +6,14 @@ nav {
   border-radius: 15px;
 }
 
+.card-title {
+  margin: 1em 10%;
+}
+
+.btn-primary {
+  margin: 1em 0;
+}
+
 .navbar .navbar-nav .nav-item .nav-link {
   padding: 0 0.5em;
   color: white;
@@ -15,6 +23,12 @@ nav {
 }
 
 .table {
+  td {
+    max-width: 700px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   tbody {
     tr:nth-child(odd){
     background-color: #F2E8FF;

@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h4>
-  <%= @ripple.author %>  said:
-</h4>
-
-<p class="lead" style="margin: 1em 10%">
-  <%= @ripple.message %>
-</p>
-
-<%= link_to 'Back', ripples_path %>
+<div class="card">
+  <div class="card-header h5">
+      <%= @ripple.author %>  said 🗣
+  </div>
+  <div class="card-body">
+    <h4 class="card-title" style="font-family:lucida sans typewriter"><%= @ripple.message %></h4>
+    <%= link_to 'Back', ripples_path, class:"btn btn-primary", style:"color:white" %>
+  </div>
+</div>
