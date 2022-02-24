@@ -1,5 +1,5 @@
 class RipplesController < ApplicationController
-  before_action :set_ripple, only: %i[ show edit update destroy ]
+  before_action :set_ripple, only: %i[ show update ]
 
 
   # GET /ripples or /ripples.json
@@ -26,7 +26,7 @@ class RipplesController < ApplicationController
 
     respond_to do |format|
       if @ripple.save
-        format.html { redirect_to ripples_url, notice: "Ripple was successfully created." }
+        format.html { redirect_to ripple_url(@ripple), notice: "Ripple was successfully created." }
         format.json { render :index, status: :created, location: @ripple }
       else
         format.html { render :new, status: :unprocessable_entity }
