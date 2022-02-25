@@ -7,41 +7,48 @@ class RipplesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit ripples_url
-    assert_selector "h1", text: "Ripples"
+    assert_selector "h1", text: "CONSCIOUS/mess 🧠"
+    assert_selector "h4", text: "...a stream of anonymous online ramblings"
   end
 
-  test "creating a Ripple" do
+  test "visiting create ripple" do
     visit ripples_url
-    click_on "New Ripple"
+    click_on "Create Ripple"
 
-    fill_in "Author", with: @ripple.author
-    fill_in "Message", with: @ripple.message
-    fill_in "Website", with: @ripple.website
+    assert_selector "h1", text: "New Ripple"
+  end
+  test "creating a Ripple with website" do
+    visit ripples_url
+    click_on "Create Ripple"
+
+    fill_in "ripple_author", with: @ripple.author
+    fill_in "ripple_website", with: @ripple.website
+    fill_in "ripple_message", with: @ripple.message
     click_on "Create Ripple"
 
     assert_text "Ripple was successfully created"
-    click_on "Back"
   end
 
-  test "updating a Ripple" do
+  test "creating a Ripple with no website" do
     visit ripples_url
-    click_on "Edit", match: :first
+    click_on "Create Ripple"
 
-    fill_in "Author", with: @ripple.author
-    fill_in "Message", with: @ripple.message
-    fill_in "Website", with: @ripple.website
-    click_on "Update Ripple"
+    fill_in "ripple_author", with: @ripple.author
+    fill_in "ripple_message", with: @ripple.message
+    click_on "Create Ripple"
 
-    assert_text "Ripple was successfully updated"
-    click_on "Back"
+    assert_text "Ripple was successfully created"
   end
 
-  test "destroying a Ripple" do
+  test "navigate to next page and back to newest" do
     visit ripples_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    click_on "Next 10 Ripples"
+    click_on "Newest"
+  end
 
-    assert_text "Ripple was successfully destroyed"
+  test "navigate to oldest and back a page" do
+    visit ripples_url
+    click_on "Oldest"
+    click_on "Previous 10 Ripples"
   end
 end
