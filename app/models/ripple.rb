@@ -5,4 +5,5 @@ class Ripple < ApplicationRecord
   with: URI::regexp(%w(http https)),
       message: "Must be a url starting with http:// or https://"
   }
+
 end

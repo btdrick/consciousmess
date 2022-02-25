@@ -2,21 +2,21 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container-fluid">
-        <ul class="nav navbar-nav ms-auto me-auto h5">
+        <ul class="nav navbar-nav ms-auto me-auto h5" style="color:white">
           <li class="nav-item">
-            <a class="nav-link" href="/ripples">Newest</a>
+            <%= newest_ripples_link %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ripples">Next 10 Ripples</a>
+            <%= previous_ripples_link %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ripples">Previous 10 Ripples</a>
+            <%= next_ripples_link %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ripples">Oldest</a>
+            <%= oldest_ripples_link %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ripples/new">New Ripple</a>
+            <%= link_to 'Create Ripple', new_ripple_path, class:"nav-link" %>
           </li>
         </ul>
     </div>
@@ -34,7 +34,7 @@
     <tbody>
       <% @ripples.each do |ripple| %>
         <tr>
-          <td><%= websitelink(ripple) %></td>
+          <td><%= website_link(ripple) %></td>
           <td><%= ripple.message %></td>
           <td><%= ripple.created_at %></td>
           <td><%= link_to 'Show', ripple %></td>

@@ -1,10 +1,11 @@
 class RipplesController < ApplicationController
   before_action :set_ripple, only: %i[ show update ]
-
+  before_action :set_page, only: [:index]
+  RIPPLES_PER_PAGE = 10
 
   # GET /ripples or /ripples.json
   def index
-    @ripples = Ripple.all
+    @ripples = Ripple.limit(RIPPLES_PER_PAGE).offset(session[:page] * RIPPLES_PER_PAGE)
   end
 
   # GET /ripples/1 or /ripples/1.json
@@ -26,7 +27,7 @@ class RipplesController < ApplicationController
 
     respond_to do |format|
       if @ripple.save
-        format.html { redirect_to ripple_url(@ripple), notice: "Ripple was successfully created." }
+        format.html { redirect_to ripples_path, notice: "Ripple was successfully created." }
         format.json { render :index, status: :created, location: @ripple }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -67,5 +68,9 @@ class RipplesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def ripple_params
       params.require(:ripple).permit(:author, :website, :message)
+    end
+
+    def set_page
+      session[:page] = params[:page].to_i || 0
     end
 end
