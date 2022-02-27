@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class RipplesTest < ApplicationSystemTestCase
   setup do
-    @ripple = ripples(:one)
+    @ripple = ripples(:ripple_1)
   end
 
   test "visiting the index" do

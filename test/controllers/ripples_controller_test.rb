@@ -2,7 +2,7 @@ require "test_helper"
 
 class RipplesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @ripple = ripples(:one)
+    @ripple = ripples(:ripple_1)
   end
 
   test "should get index" do

@@ -1,56 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  author: gary
+<% 1.upto(51) do |i| %>
+ripple_<%= i %>:
+  author: Gary
   website: https://MyString
   message: carpe diem
-
-two:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
-
-three:
-  author: gary
-  website: https://MyString
-  message: carpe diem
-
-four:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
-
-five:
-  author: gary
-  website: https://MyString
-  message: carpe diem
-
-six:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
-
-seven:
-  author: gary
-  website: https://MyString
-  message: carpe diem
-
-eight:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
-
-nine:
-  author: gary
-  website: https://MyString
-  message: carpe diem
-
-ten:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
-
-eleven:
-  author: Lary
-  website: http://MyString
-  message: mucha lucha
+<% end %>
