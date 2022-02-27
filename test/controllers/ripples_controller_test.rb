@@ -28,5 +28,4 @@ class RipplesControllerTest < ActionDispatch::IntegrationTest
     get ripple_url(@ripple)
     assert_response :success
   end
-
 end

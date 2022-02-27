@@ -2,7 +2,7 @@ module RipplesHelper
 
   def newest_ripples_link
     newest_link = ''
-    if session[:page] > 0
+    if @page > 0
       newest_link = link_to 'Newest', ripples_path, class:"nav-link"
     end
     newest_link
@@ -10,10 +10,10 @@ module RipplesHelper
 
   def previous_ripples_link
     previous_10_link = ''
-    if session[:page] > 1
+    if @page > 1
       previous_10_link = link_to 'Previous 10 Ripples',
-        ripples_path(page: session[:page] - 1), class:"nav-link"
-    elsif session[:page] == 1
+        ripples_path(page: @page - 1), class:"nav-link"
+    elsif @page == 1
       previous_10_link = link_to 'Previous 10 Ripples',
         ripples_path, class:"nav-link"
     end
@@ -22,9 +22,9 @@ module RipplesHelper
 
   def next_ripples_link
     next_10_link = ''
-    if session[:page] >= 0 && !more_ripples?
+    if @page >= 0 && !more_ripples?
       next_10_link = link_to 'Next 10 Ripples',
-        ripples_path(page: session[:page] + 1), class:"nav-link"
+        ripples_path(page: @page + 1), class:"nav-link"
     end
     next_10_link
   end
@@ -48,7 +48,7 @@ module RipplesHelper
 
   private
     def more_ripples?
-      (session[:page] + 1) * 10 >= Ripple.count
+      (@page + 1) * 10 >= Ripple.count
     end
 
     def get_last_page

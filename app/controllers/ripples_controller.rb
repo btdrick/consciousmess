@@ -5,7 +5,7 @@ class RipplesController < ApplicationController
 
   # GET /ripples or /ripples.json
   def index
-    @ripples = Ripple.limit(RIPPLES_PER_PAGE).offset(session[:page] * RIPPLES_PER_PAGE)
+    @ripples = Ripple.limit(RIPPLES_PER_PAGE).offset(@page * RIPPLES_PER_PAGE)
   end
 
   # GET /ripples/1 or /ripples/1.json
@@ -72,5 +72,6 @@ class RipplesController < ApplicationController
 
     def set_page
       session[:page] = params[:page].to_i || 0
+      @page = session[:page]
     end
 end
