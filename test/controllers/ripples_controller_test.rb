@@ -28,4 +28,34 @@ class RipplesControllerTest < ActionDispatch::IntegrationTest
     get ripple_url(@ripple)
     assert_response :success
   end
+
+  test "should navigate forward a page and then back to newest ripples" do
+    get ripples_url
+    assert_equal 0, session[:page]
+
+    assert_difference('session[:page]') do
+      get ripples_url(page: 1)
+    end
+    assert_difference('session[:page]', -1) do
+      get ripples_url(page: 0)
+    end
+  end
+
+  test "should navigate to newest and then backward a page" do
+    get ripples_url
+    ripple_count = Ripple.count
+    last_page = ripple_count
+    if last_page % 10 == 0
+      last_page -= 1
+    end
+
+    assert_difference('session[:page]', last_page) do
+      get ripples_url(page: last_page)
+    end
+
+    previous_10 = (last_page - 1)
+    assert_difference('session[:page]', -1) do
+      get ripples_url(page: previous_10)
+    end
+  end
 end

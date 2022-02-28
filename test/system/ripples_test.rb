@@ -42,13 +42,25 @@ class RipplesTest < ApplicationSystemTestCase
 
   test "navigate to next page and back to newest" do
     visit ripples_url
+
+    assert_no_text "Newest"
+    assert_text "Next 10 Ripples"
     click_on "Next 10 Ripples"
+
+    assert_text "Next 10 Ripples"
+    assert_text "Newest"
     click_on "Newest"
   end
 
   test "navigate to oldest and back a page" do
     visit ripples_url
+
+    assert_no_text "Previous 10 Ripples"
+    assert_text "Oldest"
     click_on "Oldest"
+
+    assert_text "Previous 10 Ripples"
+    assert_no_text "Oldest"
     click_on "Previous 10 Ripples"
   end
 end
